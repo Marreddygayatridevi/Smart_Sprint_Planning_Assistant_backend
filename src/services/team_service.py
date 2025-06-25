@@ -12,7 +12,6 @@ class TeamService:
             raise HTTPException(status_code=404, detail=f"No users found in team '{team_name}'")
         return users
 
-
     @staticmethod
     def get_all_teams(db: Session) -> List[Team]:
         return db.query(Team).all()
@@ -23,21 +22,3 @@ class TeamService:
         if not team:
             raise HTTPException(status_code=404, detail=f"Team '{team_name}' not found")
         return team
-
-    @staticmethod
-    def delete_team(team_name: str, db: Session) -> bool:
-        team = db.query(Team).filter(Team.name == team_name).first()
-        if not team:
-            raise HTTPException(status_code=404, detail=f"Team '{team_name}' not found")
-        
-        # Check if team has users
-        users_in_team = db.query(User).filter(User.team == team_name).count()
-        if users_in_team > 0:
-            raise HTTPException(
-                status_code=400, 
-                detail=f"Cannot delete team '{team_name}'. It has {users_in_team} users assigned to it."
-            )
-        
-        db.delete(team)
-        db.commit()
-        return True
