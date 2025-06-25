@@ -512,9 +512,9 @@ Return JSON: {{"estimated_story_points": <number>, "complexity_reasoning": "<bri
                     updated_count += 1
                     
                     if existing_assignee != assignment.assignee_name:
-                        print(f"   ✅ {assignment.issue_key}: REASSIGNED from {existing_assignee} → {assignment.assignee_name}")
+                        print(f"    {assignment.issue_key}: REASSIGNED from {existing_assignee} → {assignment.assignee_name}")
                     else:
-                        print(f"   📝 {assignment.issue_key}: Updated details (same assignee: {assignment.assignee_name})")
+                        print(f"    {assignment.issue_key}: Updated details (same assignee: {assignment.assignee_name})")
                     
                     # Optional: Delete any other duplicate entries for this issue_key
                     db.execute(text("""
@@ -547,14 +547,14 @@ Return JSON: {{"estimated_story_points": <number>, "complexity_reasoning": "<bri
                     print(f"   ➕ {assignment.issue_key}: NEW assignment to {assignment.assignee_name}")
             
             db.commit()
-            print(f"\n💾 Database Summary:")
+            print(f"\n Database Summary:")
             print(f"   New assignments: {saved_count}")
             print(f"   Updated/Reassigned: {updated_count}")
             print(f"   Total processed: {saved_count + updated_count}")
             
         except Exception as e:
             db.rollback()
-            print(f"❌ Error saving assignments: {str(e)}")
+            print(f"Error saving assignments: {str(e)}")
             raise
 
     @staticmethod
