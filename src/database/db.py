@@ -5,8 +5,7 @@ import os
 
 # Database URL from environment variables
 DATABASE_URL = os.getenv(
-    "DATABASE_URL", 
-    "postgresql://postgres:1234@localhost/sprint-planner-db"
+    "DATABASE_URL"
 )
 
 engine = create_engine(DATABASE_URL)

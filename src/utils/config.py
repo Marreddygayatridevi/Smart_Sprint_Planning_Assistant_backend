@@ -18,12 +18,12 @@ class Settings:
     JIRA_EMAIL = os.getenv('JIRA_EMAIL', '').strip()
     JIRA_API_TOKEN = os.getenv('JIRA_API_TOKEN', '').strip()
 
-    # OpenAI Configuration (future phase)
+    # OpenAI Configuration 
     OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '').strip()
 
     # App Configuration
-    FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173').strip()
-    BACKEND_URL = os.getenv('BACKEND_URL', 'http://localhost:8000').strip()
+    FRONTEND_URL = os.getenv('FRONTEND_URL', '').strip()
+    BACKEND_URL = os.getenv('BACKEND_URL', '').strip()
 
 # Instantiate global settings object
 settings = Settings()

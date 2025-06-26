@@ -23,6 +23,10 @@ app.add_middleware(
 def health_check():
     return {"status": "ok"}
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Jira AI Assistant API!"}
+
 @app.on_event("startup")
 def startup_event():
     create_tables()

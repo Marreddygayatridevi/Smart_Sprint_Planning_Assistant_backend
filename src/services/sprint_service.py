@@ -28,9 +28,9 @@ class SprintConfig:
     
     # Experience thresholds (data-driven)
     EXPERIENCE_THRESHOLDS = {
-        'senior': 40,   # 40+ tickets
-        'junior': 15,   # 15-39 tickets
-        'intern': 0     # 0-14 tickets
+        'senior': 40,   
+        'junior': 15,   
+        'intern': 0     
     }
     
     # Story point rules by experience
