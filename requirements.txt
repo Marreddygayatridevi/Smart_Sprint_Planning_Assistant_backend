@@ -1,0 +1,29 @@
+# FastAPI Framework
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+psycopg2-binary
+
+# Authentication & Security
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+
+# Environment Configuration
+python-dotenv
+
+# AI Integration
+openai
+
+# HTTP Requests (for JIRA integration)
+requests
+httpx
+
+# Data Validation
+pydantic
+pydantic-settings
+
+# Date/Time handling
+python-dateutil
