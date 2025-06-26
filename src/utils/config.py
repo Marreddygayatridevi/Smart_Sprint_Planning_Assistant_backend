@@ -23,7 +23,6 @@ class Settings:
 
     # App Configuration
     FRONTEND_URL = os.getenv('FRONTEND_URL', '').strip()
-    BACKEND_URL = os.getenv('BACKEND_URL', '').strip()
 
 # Instantiate global settings object
 settings = Settings()
