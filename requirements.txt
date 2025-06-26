@@ -24,6 +24,7 @@ httpx
 # Data Validation
 pydantic
 pydantic-settings
+pydantic[email]
 
 # Date/Time handling
 python-dateutil
