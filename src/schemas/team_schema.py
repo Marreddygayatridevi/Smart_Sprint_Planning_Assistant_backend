@@ -11,7 +11,7 @@ class TeamCreate(BaseModel):
 class TeamResponse(BaseModel):
     id: int
     name: str
-    created_at: datetime
+    created_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True
@@ -31,7 +31,7 @@ class TeamUserResponse(BaseModel):
 class TeamWithUsersResponse(BaseModel):
     id: int
     name: str
-    created_at: datetime
+    created_at: Optional[datetime] = None
     users: List[TeamUserResponse] = []
 
     class Config:
